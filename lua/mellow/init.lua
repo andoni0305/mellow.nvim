@@ -36,13 +36,13 @@ local set_groups = function()
     { hg = "Boolean", fg = c.yellow, cfg.boolean_style }, -- a boolean constant: TRUE, false
     { hg = "Float", fg = c.magenta }, -- a floating point constant: 2.3e10
     { hg = "Identifier", fg = c.fg, cfg.variable_style }, -- any variable name
-    { hg = "Function", fg = c.white, gui = cfg.function_style }, -- function name (also: methods for classes)
+    { hg = "Function", fg = c.bright_blue, gui = "italic" }, -- function name (also: methods for classes)
     { hg = "Statement", fg = c.white }, -- any statement
     { hg = "Conditional", fg = c.blue }, -- if, then, else, endif, switch, etc.
     { hg = "Repeat", fg = c.blue }, -- for, do, while, etc.
     { hg = "Label", fg = c.blue }, -- case, default, etc.
     { hg = "Operator", fg = c.yellow }, -- sizeof", "+", "*", etc.
-    { hg = "Keyword", fg = c.blue, gui = cfg.keyword_style }, -- any other keyword
+    { hg = "Keyword", fg = c.blue, gui = "bold" }, -- any other keyword
     { hg = "Exception", fg = c.purple }, -- try, catch, throw
     { hg = "PreProc", fg = c.cyan }, -- generic Preprocessor
     { hg = "Include", fg = c.blue }, -- preprocessor #include
@@ -88,13 +88,19 @@ local set_groups = function()
     { hg = "MoreMsg" }, -- more-prompt
     { hg = "NonText", fg = c.gray02 }, --'~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
     { hg = "Normal", fg = c.fg, bg = c.bg }, -- normal text
+    { hg = "NormalFloat", link = "Normal" }, -- normal float text
+    { hg = "NormalFloat", link = "Normal" }, -- normal float text
+    {
+      hg = "FloatBorder",
+      fg = c.blue, --[[ bold = true ]]
+    },
     { hg = "Pmenu", fg = c.white, bg = c.black }, -- Popup menu: normal item.
     { hg = "PmenuSel", fg = c.bright_white, bg = c.gray03 }, -- Popup menu: selected item.
     { hg = "PmenuSbar", bg = c.gray02 }, -- Popup menu: scrollbar.
     { hg = "PmenuThumb", bg = c.gray03 }, -- Popup menu: Thumb of the scrollbar.
     { hg = "Question", fg = c.blue }, -- hit-enter prompt and yes/no questions
     { hg = "QuickFixLine", fg = c.cyan, bg = c.gray02 }, -- Current quickfix item in the quickfix window.
-    { hg = "Search", fg = c.yellow, bg = c.black }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    { hg = "Search", fg = c.bright_yellow, bg = c.bright_black }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     { hg = "SpecialKey", fg = c.special_grey }, -- Meta and special keys listed with " =map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
     { hg = "SpellBad", fg = c.red, gui = "underline" }, -- Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
     { hg = "SpellCap", fg = c.yellow }, -- Word that should start with a capital. This will be combined with the highlighting used otherwise.
@@ -109,11 +115,11 @@ local set_groups = function()
     { hg = "TabLineSel", fg = c.white }, -- tab pages line, active tab page label
     { hg = "Terminal", fg = c.fg, bg = c.black }, -- terminal window (see terminal-size-color)
     { hg = "Title", fg = c.green }, -- titles for output from " =set all", ":autocmd" etc.
-    { hg = "Visual", bg = c.gray02 }, -- Visual mode selection
-    { hg = "VisualNOS", bg = c.gray02 }, -- Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
+    { hg = "Visual", bg = c.gray04 }, -- Visual mode selection
+    { hg = "VisualNOS", bg = c.gray04 }, -- Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
     { hg = "WarningMsg", fg = c.yellow }, -- warning messages
     { hg = "WildMenu", fg = c.black, bg = c.blue }, -- current match in 'wildmenu' completion
-    { hg = "Winbar", fg = c.white, bg = c.gray01 }, -- Winbar
+    { hg = "Winbar", fg = c.white, bg = nil }, -- Winbar
     { hg = "WinbarNC", fg = c.gray05, bg = c.bg_dark }, -- Winbar non-current windows.
 
     -- HTML
@@ -142,7 +148,7 @@ local set_groups = function()
     { hg = "@variable", fg = c.fg, gui = cfg.variable_style },
     { hg = "@variable.parameter", fg = c.cyan, gui = cfg.variable_style },
     -- Tree sitter language specific overrides
-    { hg = "@constructor.javascript", fg = c.yellow },
+    { hg = "@constructor", fg = c.yellow },
     { hg = "@keyword.clojure", fg = c.bright_cyan, gui = cfg.keyword_style },
     { hg = "@keyword.function.clojure", fg = c.bright_cyan, gui = cfg.function_style },
 
@@ -176,6 +182,27 @@ local set_groups = function()
     { hg = "diffFile", fg = c.gray05 },
     { hg = "diffLine", fg = c.cyan },
     { hg = "diffIndexLine", fg = c.magenta },
+
+    -- cmp
+    { hg = "CmpItemAbbrMatchDefault", fg = colors.bright_blue },
+    { hg = "CmpItemAbbrMatchFuzzyDefault", fg = colors.bright_blue },
+
+    -- notify
+    { hg = "NotifyERRORBorder", fg = colors.cyan },
+    { hg = "NotifyWARNBorder", fg = colors.yellow },
+    { hg = "NotifyINFOBorder", fg = colors.green },
+    { hg = "NotifyDEBUGBorder", fg = colors.gray05 },
+    { hg = "NotifyTRACEBorder", fg = colors.blue },
+    { hg = "NotifyERRORIcon", fg = colors.bright_cyan },
+    { hg = "NotifyWARNIcon", fg = colors.bright_red },
+    { hg = "NotifyINFOIcon", fg = colors.bright_green },
+    { hg = "NotifyDEBUGIcon", fg = colors.gray03 },
+    { hg = "NotifyTRACEIcon", fg = colors.bright_blue },
+    { hg = "NotifyERRORTitle", fg = colors.bright_cyan },
+    { hg = "NotifyWARNTitle", fg = colors.bright_red },
+    { hg = "NotifyINFOTitle", fg = colors.bright_green },
+    { hg = "NotifyDEBUGTitle", fg = colors.gray03 },
+    { hg = "NotifyTRACETitle", fg = colors.bright_blue },
   }
 
   utils.highlight(highlights)
