@@ -184,8 +184,8 @@ local set_groups = function()
     { hg = "diffIndexLine", fg = c.magenta },
 
     -- cmp
-    { hg = "CmpItemAbbrMatch", fg = c.bright_blue },
-    { hg = "CmpItemAbbrMatchFuzzy", fg = c.bright_blue },
+    { hg = "CmpItemAbbrMatch", fg = c.cyan },
+    { hg = "CmpItemAbbrMatchFuzzy", fg = c.cyan },
 
     -- notify
     { hg = "NotifyERRORBorder", fg = c.cyan },
@@ -203,6 +203,9 @@ local set_groups = function()
     { hg = "NotifyINFOTitle", fg = c.bright_green },
     { hg = "NotifyDEBUGTitle", fg = c.gray03 },
     { hg = "NotifyTRACETitle", fg = c.bright_blue },
+
+    -- Telescope
+    { hg = "TelescopeBorder", fg = c.blue },
   }
 
   utils.highlight(highlights)
