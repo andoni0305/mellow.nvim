@@ -184,25 +184,25 @@ local set_groups = function()
     { hg = "diffIndexLine", fg = c.magenta },
 
     -- cmp
-    { hg = "CmpItemAbbrMatchDefault", fg = colors.bright_blue },
-    { hg = "CmpItemAbbrMatchFuzzyDefault", fg = colors.bright_blue },
+    { hg = "CmpItemAbbrMatchDefault", fg = c.bright_blue },
+    { hg = "CmpItemAbbrMatchFuzzyDefault", fg = c.bright_blue },
 
     -- notify
-    { hg = "NotifyERRORBorder", fg = colors.cyan },
-    { hg = "NotifyWARNBorder", fg = colors.yellow },
-    { hg = "NotifyINFOBorder", fg = colors.green },
-    { hg = "NotifyDEBUGBorder", fg = colors.gray05 },
-    { hg = "NotifyTRACEBorder", fg = colors.blue },
-    { hg = "NotifyERRORIcon", fg = colors.bright_cyan },
-    { hg = "NotifyWARNIcon", fg = colors.bright_red },
-    { hg = "NotifyINFOIcon", fg = colors.bright_green },
-    { hg = "NotifyDEBUGIcon", fg = colors.gray03 },
-    { hg = "NotifyTRACEIcon", fg = colors.bright_blue },
-    { hg = "NotifyERRORTitle", fg = colors.bright_cyan },
-    { hg = "NotifyWARNTitle", fg = colors.bright_red },
-    { hg = "NotifyINFOTitle", fg = colors.bright_green },
-    { hg = "NotifyDEBUGTitle", fg = colors.gray03 },
-    { hg = "NotifyTRACETitle", fg = colors.bright_blue },
+    { hg = "NotifyERRORBorder", fg = c.cyan },
+    { hg = "NotifyWARNBorder", fg = c.yellow },
+    { hg = "NotifyINFOBorder", fg = c.green },
+    { hg = "NotifyDEBUGBorder", fg = c.gray05 },
+    { hg = "NotifyTRACEBorder", fg = c.blue },
+    { hg = "NotifyERRORIcon", fg = c.bright_cyan },
+    { hg = "NotifyWARNIcon", fg = c.bright_red },
+    { hg = "NotifyINFOIcon", fg = c.bright_green },
+    { hg = "NotifyDEBUGIcon", fg = c.gray03 },
+    { hg = "NotifyTRACEIcon", fg = c.bright_blue },
+    { hg = "NotifyERRORTitle", fg = c.bright_cyan },
+    { hg = "NotifyWARNTitle", fg = c.bright_red },
+    { hg = "NotifyINFOTitle", fg = c.bright_green },
+    { hg = "NotifyDEBUGTitle", fg = c.gray03 },
+    { hg = "NotifyTRACETitle", fg = c.bright_blue },
   }
 
   utils.highlight(highlights)
