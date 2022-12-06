@@ -184,8 +184,8 @@ local set_groups = function()
     { hg = "diffIndexLine", fg = c.magenta },
 
     -- cmp
-    { hg = "CmpItemAbbrMatchDefault", fg = c.bright_blue },
-    { hg = "CmpItemAbbrMatchFuzzyDefault", fg = c.bright_blue },
+    { hg = "CmpItemAbbrMatch", fg = c.bright_blue },
+    { hg = "CmpItemAbbrMatchFuzzy", fg = c.bright_blue },
 
     -- notify
     { hg = "NotifyERRORBorder", fg = c.cyan },
