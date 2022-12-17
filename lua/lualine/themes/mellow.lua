@@ -4,7 +4,7 @@ return {
   normal = {
     a = { fg = colors.bg, bg = colors.cyan, gui = "bold" },
     b = { fg = colors.white, bg = colors.gray02 },
-    c = { fg = colors.white, bg = colors.gray01 },
+    c = { fg = colors.white, bg = colors.bg },
   },
   command = { a = { fg = colors.bg, bg = colors.yellow, gui = "bold" } },
   insert = { a = { fg = colors.bg, bg = colors.blue, gui = "bold" } },
